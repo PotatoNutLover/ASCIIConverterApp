@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9DIJB9xOUf9/6kHA7Xjpj791WTrL1UmQF7rS3HLRjQh/O2MMemYF9DwWgWy34NJoi+Vt054X00/4TIKPIkb3cQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\potatoo-pc\\source\\repos\\ASCIIConverter\\ASCIIConverter\\ASCIIConverter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\potatoo-pc\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\potatoo-pc\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

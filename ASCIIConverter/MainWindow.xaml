@@ -1,0 +1,80 @@
+﻿<Window x:Class="ASCIIConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASCIIConverter"
+        mc:Ignorable="d"
+        Title="ASCIIConverter" Height="560" Width="300" ResizeMode="NoResize" AllowDrop="True" DragEnter="Window_DragEnter" DragDrop.Drop="Window_DragOver">
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="223*"/>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="113*"/>
+                <ColumnDefinition Width="37*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" x:Name="LabelPath" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="10,0,0,0" Foreground="#FF363636" FontSize="20" >
+                Save path...
+            </Label>
+            <Button Grid.Column="1" x:Name="ChooseFolderButton" Margin="10 15" FontSize="15" VerticalContentAlignment="Center" Foreground="#FF363636" Click="ChooseFolderButton_Click">
+                ...
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="197*"/>
+                <ColumnDefinition Width="103*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="10,0,0,0" Foreground="#FF363636" FontSize="20">
+                Сompression level
+            </Label>
+            <TextBox Grid.Column="1" x:Name="TextBoxCompressionLevel" Margin="10" BorderThickness="1.5" BorderBrush="#FF363636" Foreground="#FF363636" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="15" FontFamily="Calibri" TextChanged="TextBoxCompressionLevel_TextChanged"  >
+                1
+            </TextBox>
+            <Label Grid.Column="0" Grid.Row="1" x:Name="ResolutionLabel" Foreground="#FF646464" FontFamily="Calibri" HorizontalAlignment="Center" VerticalAlignment="Top">
+                
+            </Label>
+        </Grid>
+        <Grid Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130*"/>
+                <ColumnDefinition Width="103*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="10,0,0,0" Foreground="#FF363636" FontSize="20">
+                Brightness level
+            </Label>
+            <Slider Grid.Column="1" x:Name="BrightnessSlider" VerticalAlignment="Center" Background="White" BorderBrush="White" Margin="10" Foreground="White" Minimum="-100" Maximum="100" Value="0" SmallChange=".1" LargeChange="1" ValueChanged="BrightnessSlider_ValueChanged"/>
+            <Label Grid.Column="1" Grid.Row="1" x:Name="BrighnessLabel" Foreground="#FF646464" FontFamily="Calibri" HorizontalAlignment="Center" VerticalAlignment="Top">
+                0
+            </Label>
+        </Grid>
+
+        <Border Grid.Row="3" BorderThickness="1.5" Margin="10,10,10,10" BorderBrush="#FF363636">
+            <Image x:Name="PickedImage" Stretch="Fill" />
+        </Border>
+        <Label Grid.Row="3" x:Name="HelpLabel" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="#FF646464" Margin="0,0,0,86" Grid.RowSpan="2">
+            Drag and Drop the image
+        </Label>
+        <Button Grid.Row="4" x:Name="ConvertButton" Margin="10,10,10,10" FontSize="50" FontFamily="Calibri" VerticalContentAlignment="Center" Foreground="#FF363636" Click="ConvertButton_Click">
+            Convert
+        </Button>
+        <Label Grid.Row="5" x:Name="ConvertingStateLabel" Foreground="#FF646464" FontFamily="Calibri" FontSize="15" Content="Converting..." Margin="10 0 0 0" Visibility="Hidden" />
+    </Grid>
+
+</Window>
